@@ -1,8 +1,8 @@
+from tkinter import messagebox
+import tkinter as tk
 Here's an improved version of your Python program:
 
 ```python
-import tkinter as tk
-from tkinter import messagebox
 
 
 def generate_budget_plan(income, expenses, financial_goals):
@@ -31,16 +31,22 @@ class BudgetPlannerApp(tk.Tk):
     def create_widgets(self):
         # Create labels and entry fields for income, expenses, and financial goals
         tk.Label(self, text="Income:").grid(row=0, column=0, padx=10, pady=10)
-        tk.Entry(self, textvariable=self.income_var).grid(row=0, column=1, padx=10)
+        tk.Entry(self, textvariable=self.income_var).grid(
+            row=0, column=1, padx=10)
 
-        tk.Label(self, text="Expenses:").grid(row=1, column=0, padx=10, pady=10)
-        tk.Entry(self, textvariable=self.expenses_var).grid(row=1, column=1, padx=10)
+        tk.Label(self, text="Expenses:").grid(
+            row=1, column=0, padx=10, pady=10)
+        tk.Entry(self, textvariable=self.expenses_var).grid(
+            row=1, column=1, padx=10)
 
-        tk.Label(self, text="Financial Goals:").grid(row=2, column=0, padx=10, pady=10)
-        tk.Entry(self, textvariable=self.financial_goals_var).grid(row=2, column=1, padx=10)
+        tk.Label(self, text="Financial Goals:").grid(
+            row=2, column=0, padx=10, pady=10)
+        tk.Entry(self, textvariable=self.financial_goals_var).grid(
+            row=2, column=1, padx=10)
 
         # Create submit button
-        tk.Button(self, text="Submit", command=self.generate_budget_plan).grid(row=3, column=0, columnspan=2, pady=10)
+        tk.Button(self, text="Submit", command=self.generate_budget_plan).grid(
+            row=3, column=0, columnspan=2, pady=10)
 
     def generate_budget_plan(self):
         # Get user inputs and validate them
@@ -49,11 +55,13 @@ class BudgetPlannerApp(tk.Tk):
         financial_goals = self.financial_goals_var.get()
 
         if income <= 0:
-            messagebox.showerror("Error", "Income should be greater than zero.")
+            messagebox.showerror(
+                "Error", "Income should be greater than zero.")
             return
 
         if expenses <= 0:
-            messagebox.showerror("Error", "Expenses should be greater than zero.")
+            messagebox.showerror(
+                "Error", "Expenses should be greater than zero.")
             return
 
         # Generate budget plan
