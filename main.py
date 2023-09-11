@@ -1,7 +1,6 @@
-import tkinter as tk
 from tkinter import messagebox
+import tkinter as tk
 Optimized Python script:
-
 ```python
 
 
@@ -16,6 +15,7 @@ def generate_budget_plan(income: int, expenses: int, financial_goals: str) -> di
 
 class BudgetPlannerApp(tk.Tk):
     def __init__(self):
+        super().__init__()
         self.title("AI-Powered Personal Budget Planner")
 
         # Initialize variables
@@ -73,4 +73,5 @@ if __name__ == "__main__":
     # Create an instance of the budget planner app
     app = BudgetPlannerApp()
     app.mainloop()
+
 ```
