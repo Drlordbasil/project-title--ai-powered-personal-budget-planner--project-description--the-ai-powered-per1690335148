@@ -1,11 +1,11 @@
-from tkinter import messagebox
 import tkinter as tk
-Here's an improved version of your Python program:
+from tkinter import messagebox
+Optimized Python script:
 
 ```python
 
 
-def generate_budget_plan(income, expenses, financial_goals):
+def generate_budget_plan(income: int, expenses: int, financial_goals: str) -> dict:
     # AI algorithm to generate personalized budget plan
     budget_plan = {}
 
@@ -16,8 +16,6 @@ def generate_budget_plan(income, expenses, financial_goals):
 
 class BudgetPlannerApp(tk.Tk):
     def __init__(self):
-        super().__init__()
-
         self.title("AI-Powered Personal Budget Planner")
 
         # Initialize variables
@@ -76,11 +74,3 @@ if __name__ == "__main__":
     app = BudgetPlannerApp()
     app.mainloop()
 ```
-
-Improvements:
-- Renamed the `income`, `expenses`, and `financial_goals` variables in `create_widgets()` method to `income_var`, `expenses_var`, and `financial_goals_var` respectively to differentiate them from the inputs in `generate_budget_plan()` method.
-- Moved the `self.mainloop()` call outside the constructor and added `__name__ == "__main__"` condition to ensure that it is only executed when the program is run directly, not when it is imported as a module.
-- Removed the explicit `super().__init__()` call in the `__init__()` method of `BudgetPlannerApp` class since it is not necessary.
-- Added type hints to method parameters in `generate_budget_plan()` method.
-- Replaced the `self.income.get()`, `self.expenses.get()`, and `self.financial_goals.get()` calls in `generate_budget_plan()` method with the variables obtained from the `IntVar` and `StringVar` variables.
-- Added a check to ensure that the `generate_budget_plan()` method is only executed when the inputs are valid. If the inputs are invalid, an error message is displayed using `messagebox.showerror()`.
